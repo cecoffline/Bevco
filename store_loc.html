@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BEVCO Store Locator</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ecb613",
+                        "background-light": "#f8f8f6",
+                        "background-dark": "#1a1a1a"
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Roboto", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .map-container {
+            height: 500px;
+            width: 100%;
+        }
+        .bg-pattern {
+             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23ecb613' fill-opacity='0.1'%3E%3Crect x='0' y='0' width='50' height='50'/%3E%3Crect x='50' y='50' width='50' height='50'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .details-arrow[open] > summary .arrow {
+            transform: rotate(180deg);
+        }
+        .details-arrow summary {
+            list-style: none;
+        }
+        .details-arrow summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-white">
+<div class="relative min-h-screen w-full overflow-x-hidden">
+<div class="absolute inset-0 bg-pattern z-0"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/90 to-background-dark z-0"></div>
+<div class="relative z-10 flex h-full min-h-screen flex-col">
+<header class="border-b border-primary/30">
+<div class="container mx-auto flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-12">
+<a class="text-3xl font-display font-bold text-white" href="bevco.html">BE<span class="text-primary">V</span>CO</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white/80 hover:text-white transition-colors duration-300" href="#">Our Story</a>
+<a class="text-white/80 hover:text-white transition-colors duration-300" href="#">Products</a>
+<a class="text-white/80 hover:text-white transition-colors duration-300" href="#">Cocktails</a>
+<a class="font-bold text-primary" href="visit_us.html">Visit Us</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden sm:block text-white/80 hover:text-white transition-colors duration-300" href="store_loc.html">Shop</a>
+<button class="rounded bg-primary/20 dark:bg-primary/30 px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/40 dark:hover:bg-primary/50">
+                            Sign In
+                        </button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="container mx-auto px-6 py-16">
+<div class="text-center mb-12">
+<h1 class="text-5xl font-display font-bold text-white"><span class="text-primary">Store</span> Locator</h1>
+<p class="text-white/70 mt-2 max-w-2xl mx-auto">Find BEVCO counters across Kerala. Your next favorite drink is closer than you think.</p>
+</div>
+<div class="bg-black/50 backdrop-blur-md border border-primary/20 rounded-xl overflow-hidden shadow-2xl shadow-black/30">
+<div class="map-container">
+<img alt="Google Map showing BEVCO locations in Kerala" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu8LIP0bn3UwX3LmQojpQcQ7Vh6QddOWgbAEtTndwqKb2oq-3THowkoLLMawOiUobxf-PNmKdwEvH1_zJHc-AgXYzIhLZWdPaMQ9nzz-8-iAL_nbmWHdE0ddgKcqPIDcLdSfFdlwLhMRlQUUO7t7DY9xWZdeBy3vCf4P1mkTntGciM6eq9rus_NLVHxEegyhGiEoejrFk74CpkG60-8uGZA0b-I5sJYFGQPKNKD6vyvScfIWtkylnAhER0FWJ5nivTc652OUEsCnJU"/>
+</div>
+<div class="p-8">
+<div class="flex flex-col sm:flex-row gap-4 mb-8">
+<div class="relative flex-grow">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary">search</span>
+<input class="w-full bg-background-dark/50 border-primary/50 rounded-lg p-3 pl-12 text-white placeholder:text-white/60 focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300" placeholder="Search for a counter or warehouse..." type="text"/>
+</div>
+<button class="bg-primary text-background-dark font-bold py-3 px-8 rounded-lg hover:bg-primary/90 transition-colors duration-300 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">location_on</span>
+<span>Find</span>
+</button>
+</div>
+<div class="max-h-96 overflow-y-auto pr-4 space-y-2">
+<!-- Warehouse 01 - Trivandrum -->
+<details class="details-arrow group">
+  <summary class="bg-black/30 p-4 rounded-lg border border-transparent hover:border-primary/50 transition-all duration-300 flex items-center justify-between cursor-pointer">
+    <h3 class="text-xl font-display text-primary">Warehouse 01 - Trivandrum</h3>
+    <span class="material-symbols-outlined text-primary arrow transition-transform duration-300 group-open:rotate-180">expand_more</span>
+  </summary>
+  <div class="py-2 pl-4 space-y-2">
+    <div class="bg-black/20 p-4 rounded-lg border-l-2 border-primary/50 flex items-center justify-between">
+      <div>
+        <h4 class="font-bold text-white">KSBC FL-9 Warehouse: Balaramapuram</h4>
+        <p class="text-white/70 text-sm">Balaramapuram, Thiruvananthapuram</p>
+      </div>
+      <button class="text-primary hover:text-white transition-colors duration-300">
+        <span class="material-symbols-outlined">directions</span>
+      </button>
+    </div>
+    <!-- Additional outlets can be added here in the same format -->
+  </div>
+</details>
+
+<!-- Warehouse 02 - Nedumangad -->
+<details class="details-arrow group">
+  <summary class="bg-black/30 p-4 rounded-lg border border-transparent hover:border-primary/50 transition-all duration-300 flex items-center justify-between cursor-pointer">
+    <h3 class="text-xl font-display text-primary">Warehouse 02 - Nedumangad</h3>
+    <span class="material-symbols-outlined text-primary arrow transition-transform duration-300 group-open:rotate-180">expand_more</span>
+  </summary>
+  <div class="py-2 pl-4 space-y-2">
+    <div class="bg-black/20 p-4 rounded-lg border-l-2 border-primary/50 flex items-center justify-between">
+      <div>
+        <h4 class="font-bold text-white">KSBC FL-9 Warehouse: Nedumangad</h4>
+        <p class="text-white/70 text-sm">Nedumangad, Thiruvananthapuram</p>
+      </div>
+      <button class="text-primary hover:text-white transition-colors duration-300">
+        <span class="material-symbols-outlined">directions</span>
+      </button>
+    </div>
+    <!-- Additional outlets can be added here in the same format -->
+  </div>
+</details>
+
+<!-- Warehouse 03 - Menamkulam -->
+<details class="details-arrow group">
+  <summary class="bg-black/30 p-4 rounded-lg border border-transparent hover:border-primary/50 transition-all duration-300 flex items-center justify-between cursor-pointer">
+    <h3 class="text-xl font-display text-primary">Warehouse 03 - Menamkulam</h3>
+    <span class="material-symbols-outlined text-primary arrow transition-transform duration-300 group-open:rotate-180">expand_more</span>
+  </summary>
+  <div class="py-2 pl-4 space-y-2">
+    <div class="bg-black/20 p-4 rounded-lg border-l-2 border-primary/50 flex items-center justify-between">
+      <div>
+        <h4 class="font-bold text-white">KSBC FL-9 Warehouse: Menamkulam</h4>
+        <p class="text-white/70 text-sm">Menamkulam, Thiruvananthapuram</p>
+      </div>
+      <button class="text-primary hover:text-white transition-colors duration-300">
+        <span class="material-symbols-outlined">directions</span>
+      </button>
+    </div>
+    <!-- Additional outlets can be added here in the same format -->
+  </div>
+</details>
+
+<!-- Warehouse 04 - Attingal -->
+<details class="details-arrow group">
+  <summary class="bg-black/30 p-4 rounded-lg border border-transparent hover:border-primary/50 transition-all duration-300 flex items-center justify-between cursor-pointer">
+    <h3 class="text-xl font-display text-primary">Warehouse 04 - Attingal</h3>
+    <span class="material-symbols-outlined text-primary arrow transition-transform duration-300 group-open:rotate-180">expand_more</span>
+  </summary>
+  <div class="py-2 pl-4 space-y-2">
+    <div class="bg-black/20 p-4 rounded-lg border-l-2 border-primary/50 flex items-center justify-between">
+      <div>
+        <h4 class="font-bold text-white">KSBC FL-9 Warehouse: Attingal</h4>
+        <p class="text-white/70 text-sm">Attingal, Thiruvananthapuram</p>
+      </div>
+      <button class="text-primary hover:text-white transition-colors duration-300">
+        <span class="material-symbols-outlined">directions</span>
+      </button>
+    </div>
+    <!-- Additional outlets can be added here in the same format -->
+  </div>
+</details>
+
+<!-- Warehouse 05 - Kollam -->
+<details class="details-arrow group">
+  <summary class="bg-black/30 p-4 rounded-lg border border-transparent hover:border-primary/50 transition-all duration-300 flex items-center justify-between cursor-pointer">
+    <h3 class="text-xl font-display text-primary">Warehouse 05 - Kollam</h3>
+    <span class="material-symbols-outlined text-primary arrow transition-transform duration-300 group-open:rotate-180">expand_more</span>
+  </summary>
+  <div class="py-2 pl-4 space-y-2">
+    <div class="bg-black/20 p-4 rounded-lg border-l-2 border-primary/50 flex items-center justify-between">
+      <div>
+        <h4 class="font-bold text-white">KSBC FL-9 Warehouse: Kollam</h4>
+        <p class="text-white/70 text-sm">Kollam</p>
+      </div>
+      <button class="text-primary hover:text-white transition-colors duration-300">
+        <span class="material-symbols-outlined">directions</span>
+      </button>
+    </div>
+    <!-- Additional outlets can be added here in the same format -->
+  </div>
+</details>
+
+<!-- Warehouse 06 - Kottarakkara -->
+<details class="details-arrow group">
+  <summary class="bg-black/30 p-4 rounded-lg border border-transparent hover:border-primary/50 transition-all duration-300 flex items-center justify-between cursor-pointer">
+    <h3 class="text-xl font-display text-primary">Warehouse 06 - Kottarakkara</h3>
+    <span class="material-symbols-outlined text-primary arrow transition-transform duration-300 group-open:rotate-180">expand_more</span>
+  </summary>
+  <div class="py-2 pl-4 space-y-2">
+    <div class="bg-black/20 p-4 rounded-lg border-l-2 border-primary/50 flex items-center justify-between">
+      <div>
+        <h4 class="font-bold text-white">KSBC FL-9 Warehouse: Kottarakkara</h4>
+        <p class="text-white/70 text-sm">Kottarakkara</p>
+      </div>
+      <button class="text-primary hover:text-white transition-colors duration-300">
+        <span class="material-symbols-outlined">directions</span>
+      </button>
+    </div>
+    <!-- Additional outlets can be added here in the same format -->
+  </div>
+</details>
+
+<!-- Warehouse 07 - Pathanamthitta -->
+<details class="details-arrow group">
+  <summary class="bg-black/30 p-4 rounded-lg border border-transparent hover:border-primary/50 transition-all duration-300 flex items-center justify-between cursor-pointer">
+    <h3 class="text-xl font-display text-primary">Warehouse 07 - Pathanamthitta</h3>
+    <span class="material-symbols-outlined text-primary arrow transition-transform duration-300 group-open:rotate-180">expand_more</span>
+  </summary>
+  <div class="py-2 pl-4 space-y-2">
+    <div class="bg-black/20 p-4 rounded-lg border-l-2 border-primary/50 flex items-center justify-between">
+      <div>
+        <h4 class="font-bold text-white">KSBC FL-1 Outlet: Pathanamthitta</h4>
+        <p class="text-white/70 text-sm">Pathanamthitta</p>
+      </div>
+      <button class="text-primary hover:text-white transition-colors duration-300">
+        <span class="material-symbols-outlined">directions</span>
+      </button>
+    </div>
+    <!-- Additional outlets can be added here in the same format -->
+  </div>
+</details>
+
+<!-- Warehouse 08 - Thiruvalla -->
+<details class="details-arrow group">
+  <summary class="bg-black/30 p-4 rounded-lg border border-transparent hover:border-primary/50 transition-all duration-300 flex items-center justify-between cursor-pointer">
+    <h3 class="text-xl font-display text-primary">Warehouse 08 - Thiruvalla</h3>
+    <span class="material-symbols-outlined text-primary arrow transition-transform duration-300 group-open:rotate-180">expand_more</span>
+  </summary>
+  <div class="py-2 pl-4 space-y-2">
+    <div class="bg-black/20 p-4 rounded-lg border-l-2 border-primary/50 flex items-center justify-between">
+      <div>
+        <h4 class="font-bold text-white">KSBC FL-1 Outlet: Thiruvalla</h4>
+        <p class="text-white/70 text-sm">Thiruvalla</p>
+      </div>
+      <button class="text-primary hover:text-white transition-colors duration-300">
+        <span class="material-symbols-outlined">directions</span>
+      </button>
+    </div>
+    <!-- Additional outlets can be added here in the same format -->
+  </div>
+</details>
+
+<!-- Warehouse 09 - Alappuzha -->
+<details class="details-arrow group">
+  <summary class="bg-black/30 p-4 rounded-lg border border-transparent hover:border-primary/50 transition-all duration-300 flex items-center justify-between cursor-pointer">
+ 
+
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<!---------------------------footer----------------------------------->
+
+<footer class="bg-black/80 backdrop-blur-sm border-t border-primary/30 mt-16">
+<div class="container mx-auto px-6 py-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-3">
+<a class="text-4xl font-display font-bold text-white" href="#">BE<span class="text-primary">V</span>CO</a>
+<p class="text-white/70 mt-4 text-sm">Kerala, India</p>
+</div>
+<div class="md:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-8">
+<div class="sm:col-span-1">
+<h3 class="text-lg font-display text-primary mb-4">Navigate</h3>
+<nav class="space-y-2">
+<a class="block text-white/80 hover:text-white text-sm transition-colors" href="bevco.html">Home</a>
+<a class="block text-white/80 hover:text-white text-sm transition-colors" href="#">Our Story</a>
+<a class="block text-white/80 hover:text-white text-sm transition-colors" href="#">Products</a>
+<a class="block text-white/80 hover:text-white text-sm transition-colors" href="#">Cocktails</a>
+<a class="block text-white/80 hover:text-white text-sm transition-colors" href="visit_us.html">Visit Us</a>
+<a class="block text-white/80 hover:text-white text-sm transition-colors" href="store_loc.html">Shop</a>
+</nav>
+</div>
+<div class="sm:col-span-1">
+<h3 class="text-lg font-display text-primary mb-4">Follow Us</h3>
+<div class="space-y-2">
+<a class="flex items-center text-white/80 hover:text-white text-sm transition-colors" href="#">
+<svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
+<span>Facebook</span>
+</a>
+<a class="flex items-center text-white/80 hover:text-white text-sm transition-colors" href="#">
+<svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path></svg>
+<span>Instagram</span>
+</a>
+</div>
+</div>
+<div class="sm:col-span-1">
+<h3 class="text-lg font-display text-primary mb-4">Contact Us</h3>
+<p class="text-white/70 text-sm">For inquiries, please email us at <a class="text-primary hover:underline" href="mailto:contact@bevco.com">contact@bevco.com</a></p>
+</div>
+</div>
+</div>
+<div class="mt-8 border-t border-primary/30 pt-8 text-center text-white/50 text-xs">
+<p>© 2024 BEVCO. All rights reserved. Please drink responsibly. | <a class="hover:text-primary" href="privacy.html">Privacy Policy</a></p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BEVCO Homepage</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ecb613",
+                        "background-light": "#f8f8f6",
+                        "background-dark": "#221d10"
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Roboto", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .bg-slice-1 {
+            background-color: rgba(0, 0, 0, 0.4);
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+        }
+        .bg-slice-2 {
+            background-color: rgba(0, 0, 0, 0.6);
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+        }
+        .bg-slice-3 {
+            background-color: rgba(0, 0, 0, 0.8);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+        .background-container {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            filter: blur(4px);
+            z-index: 0;
+        }
+        .background-slice {
+            flex: 1;
+            background-image: url('https://images.unsplash.com/photo-1619451426760-58883451555e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: 300% 100%;
+            transition: background-position 0.6s ease-in-out;
+        }
+        .background-slice-1 {
+            background-position: 0% 50%;
+        }
+        .background-slice-2 {
+            background-position: 50% 50%;
+        }
+        .background-slice-3 {
+            background-position: 100% 50%;
+        }
+        .carousel {
+            position: relative;
+        }
+        .carousel-container {
+            display: flex;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            scrollbar-width: none;-ms-overflow-style: none;}
+        .carousel-container::-webkit-scrollbar { 
+            display: none;}
+        .carousel-item {
+            flex: 0 0 auto;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-white">
+<div class="relative min-h-screen w-full overflow-x-hidden">
+<div class="background-container">
+<div class="background-slice background-slice-1"></div>
+<div class="background-slice background-slice-2"></div>
+<div class="background-slice background-slice-3"></div>
+</div>
+<div class="absolute inset-0 bg-slice-3"></div>
+<div class="absolute inset-0 bg-slice-2"></div>
+<div class="absolute inset-0 bg-slice-1"></div>
+<div class="relative z-10 flex h-full min-h-screen flex-col">
+<header class="border-b border-primary/30">
+<div class="container mx-auto flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-12">
+<a class="text-3xl font-display font-bold text-white" href="bevco.html">BE<span class="text-primary">V</span>CO</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white/80 hover:text-white transition-colors duration-300" href="#">Our Story</a>
+<a class="text-white/80 hover:text-white transition-colors duration-300" href="#">Products</a>
+<a class="text-white/80 hover:text-white transition-colors duration-300" href="#">Cocktails</a>
+<a class="text-white/80 hover:text-white transition-colors duration-300" href="visit_us.html">Visit Us</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden sm:block text-white/80 hover:text-white transition-colors duration-300" href="store_loc.html">Shop</a>
+<button class="rounded bg-primary/20 dark:bg-primary/30 px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/40 dark:hover:bg-primary/50">
+                            Sign In
+                        </button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="container mx-auto px-6 py-24 text-center flex flex-col items-center">
+<h1 class="text-5xl md:text-7xl font-display font-bold text-white leading-tight">
+<span class="text-primary">BEVCO </span>Foreign Collection's:
+                        <br/>
+<span class="text-4xl md:text-6xl font-light text-white/90">Everything you can find in kerala and perfected overtime.</span>
+</h1>
+<p class="mt-8 max-w-2xl text-lg text-white/80">
+                        Explore the wide range of beverages available in kerala in different flavours and prices all according to your taste.
+                    </p>
+<div class="mt-12">
+
+</div>
+</div>
+
+<!------------------------------------------------------Whisky------------------------------------------------------------------>
+
+<div class="space-y-20 pb-20">
+<section id="foreign">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-display font-bold text-white text-center mb-10 border-b-2 border-primary/50 pb-4 inline-block mx-auto">Explore Wide Range of<span class="text-primary"> Whiskies</span></h2>
+<div class="carousel relative group">
+<div class="carousel-container flex gap-8 py-4" id="foreign-whisky-carousel">
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Johnnie Walker" class="h-64 w-full object-contain mb-4" src="images/foreign/whisky/jim_beam.jpg"/>
+<h3 class="text-xl font-display text-primary">Jim Beam</h3>
+<p class="text-white/70 text-sm">Bourbon (American Whiskey)</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Jack Daniel's" class="h-64 w-full object-contain mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaX0BaO9WcXLmsSzQM5jLFFX6AlQml1DXOOnD930uN73ZelRnorZPtfPgJTyecuGHNeIv_IVKvu5tNofcP8qto5yqTtGPDnDE_7UycVLg5Wt8CpmjkSgq58Q6K3hkLiot0ktTsa1vP0LZEqZwE12xidJRRPSVDqc5ordYD0xewUxshcmwHzZxNbmE3k7fxG4VAgdzmMj6SNRoBcQ-_85-yX6hwvzCOqZhJ0YC3d8dqYcpsrskL_rJg-l-6E66VxNQDot1r6w0WEU1d"/>
+<h3 class="text-xl font-display text-primary">Jack Daniel's</h3>
+<p class="text-white/70 text-sm">Tennessee Whiskey</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Absolut Vodka" class="h-64 w-full object-contain mb-4" src="images/foreign/whisky/chivas_regal.jpg"/>
+<h3 class="text-xl font-display text-primary">Chivas Regal</h3>
+<p class="text-white/70 text-sm">Scotch Whiskies</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Bacardi Rum" class="h-64 w-full object-contain mb-4" src="images/foreign/whisky/ballentine.webp"/>
+<h3 class="text-xl font-display text-primary">Ballantine's</h3>
+<p class="text-white/70 text-sm">Scotch Whiskies</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Chivas Regal" class="h-64 w-full object-contain mb-4" src="images/foreign/whisky/QuietMan.jpg"/>
+<h3 class="text-xl font-display text-primary">Quiet Man</h3>
+<p class="text-white/70 text-sm">Irish Whiskies</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Jose Cuervo" class="h-64 w-full object-contain mb-4" src="images/foreign/grp_photos/grpwhisky.webp"/>
+<h3 class="text-xl font-display text-primary">More Brands</h3>
+<p class="text-white/70 text-sm">Explore More whiskies</p>
+</div>
+</div>
+<button class="carousel-button left-0 -translate-x-4 bg-black/50 text-primary rounded-full p-2 hover:bg-primary hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="document.getElementById('foreign-whisky-carousel').scrollBy({left: -320, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="carousel-button right-0 translate-x-4 bg-black/50 text-primary rounded-full p-2 hover:bg-primary hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="document.getElementById('foreign-whisky-carousel').scrollBy({left: 320, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+
+<!------------------------------------------------------VODKA------------------------------------------------------------------>
+
+<section id="indian">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-display font-bold text-white text-center mb-10 border-b-2 border-primary/50 pb-4 inline-block mx-auto">Explore Wide Range of<span class="text-primary">Vodka</span></h2>
+<div class="carousel relative group">
+<div class="carousel-container flex gap-8 py-4" id="foreign-vodka-carousel">
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Amrut" class="h-64 w-full object-contain mb-4" src="images/foreign/vodka/smrinoff_red.jpg"/>
+<h3 class="text-xl font-display text-primary">Smirnoff</h3>
+<p class="text-white/70 text-sm">Russian Orginated</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Paul John" class="h-64 w-full object-contain mb-4" src="images/foreign/vodka/sky_blue.jpg"/>
+<h3 class="text-xl font-display text-primary">SKYY</h3>
+<p class="text-white/70 text-sm">American Orginated</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Rampur" class="h-64 w-full object-contain mb-4" src="images/foreign/vodka/belvedere_vodka.png"/>
+<h3 class="text-xl font-display text-primary">Belvedere </h3>
+<p class="text-white/70 text-sm">Polish rye Orginated</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Old Monk" class="h-64 w-full object-contain mb-4" src="images/foreign/vodka/ketle_one.jpg"/>
+<h3 class="text-xl font-display text-primary">Ketel One</h3>
+<p class="text-white/70 text-sm">Netherlands Orginateds</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Magic Moments" class="h-64 w-full object-contain mb-4" src="images/foreign/grp_photos/grpvodka.webp"/>
+<h3 class="text-xl font-display text-primary">More Brands</h3>
+<p class="text-white/70 text-sm">Explore More Vodka's</p>
+</div>
+</div>
+<button class="carousel-button left-0 -translate-x-4 bg-black/50 text-primary rounded-full p-2 hover:bg-primary hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="document.getElementById('foreign-vodka-carousel').scrollBy({left: -320, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="carousel-button right-0 translate-x-4 bg-black/50 text-primary rounded-full p-2 hover:bg-primary hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="document.getElementById('foreign-vodka-carousel').scrollBy({left: 320, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+
+<!------------------------------------------------------Gin------------------------------------------------------------------>
+
+<section id="kerala">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-display font-bold text-white text-center mb-10 border-b-2 border-primary/50 pb-4 inline-block mx-auto">Explore Wide Range of<span class="text-primary"> Gin</span></h2>
+<div class="carousel relative group">
+<div class="carousel-container flex gap-8 py-4" id="foreign-gin-carousel">
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Jawan" class="h-64 w-full object-contain mb-4" src="images/foreign/gin/bombay_sapphire.jpg"/>
+<h3 class="text-xl font-display text-primary">Bombay Sapphire</h3>
+<p class="text-white/70 text-sm">England Orginated</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="McDowell's No.1" class="h-64 w-full object-contain mb-4" src="images/foreign/gin/tranquerary.webp"/>
+<h3 class="text-xl font-display text-primary">Tanqueray </h3>
+<p class="text-white/70 text-sm">London Orginated</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Old Monk Supreme" class="h-64 w-full object-contain mb-4" src="images/foreign/gin/beefeater.jpg"/>
+<h3 class="text-xl font-display text-primary">Beefeater</h3>
+<p class="text-white/70 text-sm">UK Orginated</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Contessa" class="h-64 w-full object-contain mb-4" src="images/foreign/gin/hendrick.jpg"/>
+<h3 class="text-xl font-display text-primary">Hendrick's</h3>
+<p class="text-white/70 text-sm">Scotland Orginated</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Maharani Gin" class="h-64 w-full object-contain mb-4" src="images/foreign/grp_photos/gins.jpg"/>
+<h3 class="text-xl font-display text-primary">More brands</h3>
+<p class="text-white/70 text-sm">Explore more Gin's</p>
+</div>
+</div>
+<button class="carousel-button left-0 -translate-x-4 bg-black/50 text-primary rounded-full p-2 hover:bg-primary hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="document.getElementById('foreign-gin-carousel').scrollBy({left: -320, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="carousel-button right-0 translate-x-4 bg-black/50 text-primary rounded-full p-2 hover:bg-primary hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="document.getElementById('foreign-gin-carousel').scrollBy({left: 320, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+
+<!------------------------------------------------------Rum------------------------------------------------------------------>
+
+<section id="foreign">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-display font-bold text-white text-center mb-10 border-b-2 border-primary/50 pb-4 inline-block mx-auto">Explore Wide Range of<span class="text-primary"> Rum</span></h2>
+<div class="carousel relative group">
+<div class="carousel-container flex gap-8 py-4" id="foreign-rum-carousel">
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Johnnie Walker" class="h-64 w-full object-contain mb-4" src="images/foreign/rum/cpmorgan.jpg"/>
+<h3 class="text-xl font-display text-primary">Captain Morgan</h3>
+<p class="text-white/70 text-sm">Scotch Whisky</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Jack Daniel's" class="h-64 w-full object-contain mb-4" src="images/foreign/rum/takamaka.jpg"/>
+<h3 class="text-xl font-display text-primary">Takamaka</h3>
+<p class="text-white/70 text-sm">Tennessee Whiskey</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Absolut Vodka" class="h-64 w-full object-contain mb-4" src="images/foreign/rum/havana.avif"/>
+<h3 class="text-xl font-display text-primary">Havana</h3>
+<p class="text-white/70 text-sm">Swedish Vodka</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Bacardi Rum" class="h-64 w-full object-contain mb-4" src="images/foreign/rum/bacardi_rum.jpg"/>
+<h3 class="text-xl font-display text-primary">Bacardi Black</h3>
+<p class="text-white/70 text-sm">Superior Rum</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Chivas Regal" class="h-64 w-full object-contain mb-4" src="images/foreign/rum/kraken_black.jpg"/>
+<h3 class="text-xl font-display text-primary">Kraken Black Spiced</h3>
+<p class="text-white/70 text-sm">Blended Scotch Whisky</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Jose Cuervo" class="h-64 w-full object-contain mb-4" src="images/foreign/grp_photos/rums.webp"/>
+<h3 class="text-xl font-display text-primary">More Brands</h3>
+<p class="text-white/70 text-sm">Explore whiskies</p>
+</div>
+</div>
+<button class="carousel-button left-0 -translate-x-4 bg-black/50 text-primary rounded-full p-2 hover:bg-primary hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="document.getElementById('foreign-rum-carousel').scrollBy({left: -320, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="carousel-button right-0 translate-x-4 bg-black/50 text-primary rounded-full p-2 hover:bg-primary hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="document.getElementById('foreign-rum-carousel').scrollBy({left: 320, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+
+<!------------------------------------------------------Wine------------------------------------------------------------------>
+
+<section id="foreign">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-display font-bold text-white text-center mb-10 border-b-2 border-primary/50 pb-4 inline-block mx-auto">Explore Wide Range of<span class="text-primary">Wines</span></h2>
+<div class="carousel relative group">
+<div class="carousel-container flex gap-8 py-4" id="foreign-blends-carousel">
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Johnnie Walker" class="h-64 w-full object-contain mb-4" src="images/foreign/wine/Prosecco-3.webp"/>
+<h3 class="text-xl font-display text-primary">Prosecco</h3>
+<p class="text-white/70 text-sm">Scotch Whisky</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Jack Daniel's" class="h-64 w-full object-contain mb-4" src="images/foreign/wine/imported-chardonnay-india_orig.jpg"/>
+<h3 class="text-xl font-display text-primary">Chardonnay</h3>
+<p class="text-white/70 text-sm">Tennessee Whiskey</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Absolut Vodka" class="h-64 w-full object-contain mb-4" src="images/foreign/wine/FRONTERA-MERLOT-RED-WINE.jpg"/>
+<h3 class="text-xl font-display text-primary">Frontera Merlot</h3>
+<p class="text-white/70 text-sm">Swedish Vodka</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Bacardi Rum" class="h-64 w-full object-contain mb-4" src="images/foreign/wine/cabernet_sauvignon.webp"/>
+<h3 class="text-xl font-display text-primary">Cabernet Sauvignon</h3>
+<p class="text-white/70 text-sm">Superior Rum</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Chivas Regal" class="h-64 w-full object-contain mb-4" src="images/foreign/wine/bonterra-pinot-noir-square-1719619499370.jpg"/>
+<h3 class="text-xl font-display text-primary">Bonterra Pinot</h3>
+<p class="text-white/70 text-sm">Blended Scotch Whisky</p>
+</div>
+<div class="carousel-item w-72 bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-primary/20 hover:border-primary/50 transition-all duration-300">
+<img alt="Jose Cuervo" class="h-64 w-full object-contain mb-4" src="images/foreign/grp_photos/wines.jpg"/>
+<h3 class="text-xl font-display text-primary">More Brands</h3>
+<p class="text-white/70 text-sm">Explore wines</p>
+</div>
+</div>
+<button class="carousel-button left-0 -translate-x-4 bg-black/50 text-primary rounded-full p-2 hover:bg-primary hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="document.getElementById('foreign-blends-carousel').scrollBy({left: -320, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="carousel-button right-0 translate-x-4 bg-black/50 text-primary rounded-full p-2 hover:bg-primary hover:text-black transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="document.getElementById('foreign-blends-carousel').scrollBy({left: 320, behavior: 'smooth'})">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<!--------------------------------------------------------FOOTER----------------------------------------------------->
+
+<footer class="bg-black/50 backdrop-blur-sm border-t border-primary/30">
+<div class="container mx-auto px-6 py-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-3">
+<a class="text-4xl font-display font-bold text-white" href="bevco.html">BE<span class="text-primary">V</span>CO</a>
+<p class="text-white/70 mt-4 text-sm">Bevco Tower,Palayam<br/>Vikas Bhavan PO </br><span class="text-primary">Trivandrum</span> 695033</p>
+</div>
+<div class="md:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-8">
+<div class="sm:col-span-1">
+<h3 class="text-lg font-display text-primary mb-4">Navigate</h3>
+<nav class="space-y-2">
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="#">Home</a>
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="#">Our Story</a>
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="#">Products</a>
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="#">Cocktails</a>
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="#">Visit Us</a>
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="store_loc.html">Shop</a>
+</nav>
+</div>
+<div class="sm:col-span-1">
+<h3 class="text-lg font-display text-primary mb-4">Follow Us</h3>
+<div class="space-y-2">
+<a class="flex items-center text-white/80 hover:text-primary text-sm transition-colors" href="#">
+<svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
+<span>Facebook</span>
+</a>
+<a class="flex items-center text-white/80 hover:text-primary text-sm transition-colors" href="#">
+<svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path></svg>
+<span>Instagram</span>
+</a>
+<a class="flex items-center text-white/80 hover:text-primary text-sm transition-colors" href="#">
+<svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.424.727-.666 1.581-.666 2.477 0 1.946 1.282 3.49 2.964 4.316-.84-.027-1.637-.258-2.333-.644v.056c0 2.71 1.916 4.966 4.492 5.474-.469.128-.962.192-1.472.192-.361 0-.709-.035-1.045-.098.711 2.22 2.784 3.828 5.237 3.872-1.9 1.488-4.298 2.378-6.912 2.378-.45 0-.893-.026-1.328-.077 2.457 1.578 5.378 2.502 8.534 2.502 9.878 0 15.426-8.21 15.226-15.656.985-.71 1.836-1.597 2.518-2.608z"></path></svg>
+<span>Twitter</span>
+</a>
+<a class="flex items-center text-white/80 hover:text-primary text-sm transition-colors" href="#">
+<svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
+<span>YouTube</span>
+</a>
+</div>
+</div>
+<div class="sm:col-span-1">
+<h3 class="text-lg font-display text-primary mb-4">Contact Us</h3>
+<form class="space-y-3">
+<input class="w-full bg-black/30 border-primary/50 rounded-md p-2 text-sm text-white focus:ring-primary focus:border-primary placeholder:text-white/60" placeholder="Your Name" type="text"/>
+<input class="w-full bg-black/30 border-primary/50 rounded-md p-2 text-sm text-white focus:ring-primary focus:border-primary placeholder:text-white/60" placeholder="Your Email" type="email"/>
+<button class="w-full bg-primary text-black font-bold py-2 px-4 rounded-md text-sm hover:bg-primary/80 transition-colors" type="submit">
+                                Submit
+                            </button>
+</form>
+</div>
+</div>
+</div>
+<div class="mt-12 border-t border-primary/30 pt-8 text-center text-white/50 text-xs">
+<p>© 2025 OKaMi. All rights reserved by Vignesh Biji. Please drink responsibly. | <a class="hover:text-primary" href="privacy.html">Privacy Policy</a></p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

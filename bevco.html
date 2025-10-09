@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BEVCO Homepage</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ecb613",
+                        "background-light": "#f8f8f6",
+                        "background-dark": "#221d10"
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["Roboto", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .bg-slice-1 {
+            background-color: rgba(0, 0, 0, 0.4);
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+        }
+        .bg-slice-2 {
+            background-color: rgba(0, 0, 0, 0.6);
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+        }
+        .bg-slice-3 {
+            background-color: rgba(0, 0, 0, 0.8);
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+        .image-slice-container {
+            display: flex;
+            height: 400px;
+            gap: 0.5rem;
+        }
+        .image-slice {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            transition: flex 0.5s ease-in-out;
+            cursor: pointer;
+        }
+        .image-slice:hover {
+            flex: 3;
+        }
+        .image-slice img {
+            width: 300%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease-in-out;
+        }
+        .image-slice:nth-child(1) img {
+            object-position: 25% 50%;
+        }
+        .image-slice:nth-child(2) img {
+            object-position: 50% 50%;
+        }
+        .image-slice:nth-child(3) img {
+            object-position: 75% 50%;
+        }
+        .image-slice:hover img {
+            transform: scale(1.05);
+        }
+        .image-slice .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .image-slice:hover .overlay {
+            opacity: 0;
+        }
+        .image-slice .title {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            color: white;
+            font-size: 1.875rem;
+            font-weight: 700;
+            text-align: right;
+            transition: opacity 0.3s ease-in-out;
+            white-space: nowrap;
+        }
+        .image-slice:hover .title {
+            opacity: 0;
+        }
+        .hover-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 1.5rem;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out 0.2s;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            width: 100%;
+        }
+        .image-slice:hover .hover-content {
+            opacity: 1;
+        }
+        .background-container {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            filter: blur(4px);
+            z-index: 0;
+        }
+        .background-slice {
+            flex: 1;
+            background-image: url('https://images.unsplash.com/photo-1619451426760-58883451555e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: 300% 100%;
+            transition: background-position 0.6s ease-in-out;
+        }
+        .background-slice-1 {
+            background-position: 0% 50%;
+        }
+        .background-slice-2 {
+            background-position: 50% 50%;
+        }
+        .background-slice-3 {
+            background-position: 100% 50%;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-white">
+<div class="relative min-h-screen w-full overflow-x-hidden">
+<div class="background-container">
+<div class="background-slice background-slice-1"></div>
+<div class="background-slice background-slice-2"></div>
+<div class="background-slice background-slice-3"></div>
+</div>
+<div class="absolute inset-0 bg-slice-3"></div>
+<div class="absolute inset-0 bg-slice-2"></div>
+<div class="absolute inset-0 bg-slice-1"></div>
+<div class="relative z-10 flex h-full min-h-screen flex-col">
+<header class="border-b border-primary/30">
+<div class="container mx-auto flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-12">
+<a class="text-3xl font-display font-bold text-white" href="bevco.html">BE<span class="text-primary">V</span>CO</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white/80 hover:text-white transition-colors duration-300" href="#">Our Story</a>
+<a class="text-white/80 hover:text-white transition-colors duration-300" href="#">Products</a>
+<a class="text-white/80 hover:text-white transition-colors duration-300" href="#">Cocktails</a>
+<a class="text-white/80 hover:text-white transition-colors duration-300" href="visit_us.html">Visit Us</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden sm:block text-white/80 hover:text-white transition-colors duration-300" href="store_loc.html">Shop</a>
+<button class="rounded bg-primary/20 dark:bg-primary/30 px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/40 dark:hover:bg-primary/50">
+                        Sign In
+                    </button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="container mx-auto px-6 py-24 text-center flex flex-col items-center">
+<h1 class="text-5xl md:text-7xl font-display font-bold text-white leading-tight">
+<span class="text-primary">BEVCO</span> Kerala:
+                    <br/>
+<span class="text-4xl md:text-6xl font-light text-white/90">Everything you can find and perfected overtime.</span>
+</h1>
+<p class="mt-8 max-w-2xl text-lg text-white/80">
+                    Experience the rich heritage and exceptional quality of <span class="text-primary">Bevco's</span> finest spirits. Each bottle tells a story of craftsmanship and dedication to excellence passed down through generations.
+                </p>
+<div class="mt-12">
+<a class="inline-block rounded-lg bg-primary px-10 py-4 text-lg font-semibold text-background-dark transition-transform hover:scale-105" href="store_loc.html">
+                        Discover our stores
+                    </a>
+</div>
+</div>
+<div class="container mx-auto px-6 pb-20">
+<div class="image-slice-container rounded-lg overflow-hidden">
+<div class="image-slice">
+<img alt="Whisky bottle in a classic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIT_uEXRwzERLEjoURVMVxKDNDXU1-4AzX9r5FNKmCr3vy_67nGQRc1wZmwnP32kx9c2zgKfJk6uuZWiATP-yKtv5bax2fXua-1iEUix2GFzfnX55yu_A1ASSsFCayZuhqzHfGV5Do4b9bf90Ju1KUFP8Jo--nT9a2ke3ZkuSSUgT6wpN1E271H0t4p7VgxHEQJuzO4NfPpTeX1DJjHbHtnDngXubDfoc1cSBkZG8kx8EdLFkSZxMC5ZMUSYJz9l-xbXtInVIP_6N4"/>
+<div class="overlay">
+<h3 class="title font-display">Foreign</h3>
+</div>
+<div class="hover-content">
+<h3 class="text-3xl font-display font-bold"><a href="foreign.html"><span class="text-primary">Foreign</span></a></h3>
+<p class="text-white/80 mt-2">Discover a world of flavor with our curated selection of international spirits. From the smoky peat of Scottish whiskies to the rich heritage of American bourbons, each bottle represents the pinnacle of global distillation.</p>
+</div>
+</div>
+<div class="image-slice">
+<img alt="An Indian brand whisky bottle, Rampur, on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2sYTcwzGF1MqLBExQnkcW-jASzN38xlbHACkIR4ZAxSm1hEKoz4vMzMsSQFrLOseEj1v2pwpocrt9Sj-ogx4PVimEJNpTtJR9O2Y7aUrA_OYpRlcGviMPKS31BCBhyaL_H8rsurPxF6LLsNLFac-thGWsXGotre0PMOpBO4bC8J-rlUEaJoz0LDIc7YRDcM9RSLzire6huy-vCrVNHuE6zGYRzkFJzutLTomnRTxYj9dIHXN7ivvhRQ9SEeidwsevJj-LxOtrGqqC"/>
+<div class="overlay">
+<h3 class="title font-display">Indian</h3>
+</div>
+<div class="hover-content">
+<h3 class="text-3xl font-display font-bold">Indian</h3>
+<p class="text-white/80 mt-2">Experience the spirit of India with our collection of exceptional domestic liquors. Crafted with unique local ingredients and time-honored techniques, these spirits offer a taste of the subcontinent's diverse traditions.</p>
+</div>
+</div>
+<div class="image-slice">
+<img alt="A bottle of Jawan, a Kerala brand whisky, with a glass against a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXrAkJkJuTSamvgfbDcAK5fVGn_WMQrSR2j1Dz_Amey-kpbqoYi1kLiDMmRQA675Eh42qkXlE7XtHl26lAPUxGzmK-6pzq6IvTM9u3yW67Ezlr0Sc9jKySbP_pqtYaACEyuZOuCiDDqREbijxL8PqzCBZcX05HSacwSALeOqYPMaY7ulu-IDW_ATmCqWw2Tgj_h5vsitwEGlRGdN18ja1SY5QeUXNspQu-e2fz199zjy5sRDMcQ9WqMgZBwKsVEc9Alhw9WbPQVbJv"/>
+<div class="overlay">
+<h3 class="title font-display">Kerala</h3>
+</div>
+<div class="hover-content">
+<h3 class="text-3xl font-display font-bold">Kerala</h3>
+<p class="text-white/80 mt-2">Savor the authentic taste of 'God's Own Country' with our range of Kerala's finest spirits. From traditional toddy-inspired liquors to modern craft spirits, this selection embodies the vibrant culture and lush landscapes of the region.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!--------------------------------------------------------FOOTER----------------------------------------------------->
+
+<footer class="bg-black/50 backdrop-blur-sm border-t border-primary/30">
+<div class="container mx-auto px-6 py-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-3">
+<a class="text-4xl font-display font-bold text-white" href="bevco.html">BE<span class="text-primary">V</span>CO</a>
+<p class="text-white/70 mt-4 text-sm">Bevco Tower,Palayam<br/>Vikas Bhavan PO </br><span class="text-primary">Trivandrum</span> 695033</p>
+</div>
+<div class="md:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-8">
+<div class="sm:col-span-1">
+<h3 class="text-lg font-display text-primary mb-4">Navigate</h3>
+<nav class="space-y-2">
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="bevco.html">Home</a>
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="#">Our Story</a>
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="#">Products</a>
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="#">Cocktails</a>
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="visit_us.html">Visit Us</a>
+<a class="block text-white/80 hover:text-primary text-sm transition-colors" href="store_loc.html">Shop</a>
+</nav>
+</div>
+<div class="sm:col-span-1">
+<h3 class="text-lg font-display text-primary mb-4">Follow Us</h3>
+<div class="space-y-2">
+<a class="flex items-center text-white/80 hover:text-primary text-sm transition-colors" href="#">
+<svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path></svg>
+<span>Facebook</span>
+</a>
+<a class="flex items-center text-white/80 hover:text-primary text-sm transition-colors" href="#">
+<svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path></svg>
+<span>Instagram</span>
+</a>
+<a class="flex items-center text-white/80 hover:text-primary text-sm transition-colors" href="#">
+<svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.424.727-.666 1.581-.666 2.477 0 1.946 1.282 3.49 2.964 4.316-.84-.027-1.637-.258-2.333-.644v.056c0 2.71 1.916 4.966 4.492 5.474-.469.128-.962.192-1.472.192-.361 0-.709-.035-1.045-.098.711 2.22 2.784 3.828 5.237 3.872-1.9 1.488-4.298 2.378-6.912 2.378-.45 0-.893-.026-1.328-.077 2.457 1.578 5.378 2.502 8.534 2.502 9.878 0 15.426-8.21 15.226-15.656.985-.71 1.836-1.597 2.518-2.608z"></path></svg>
+<span>Twitter</span>
+</a>
+<a class="flex items-center text-white/80 hover:text-primary text-sm transition-colors" href="#">
+<svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
+<span>YouTube</span>
+</a>
+</div>
+</div>
+<div class="sm:col-span-1">
+<h3 class="text-lg font-display text-primary mb-4">Contact Us</h3>
+<form class="space-y-3">
+<input class="w-full bg-black/30 border-primary/50 rounded-md p-2 text-sm text-white focus:ring-primary focus:border-primary placeholder:text-white/60" placeholder="Your Name" type="text"/>
+<input class="w-full bg-black/30 border-primary/50 rounded-md p-2 text-sm text-white focus:ring-primary focus:border-primary placeholder:text-white/60" placeholder="Your Email" type="email"/>
+<button class="w-full bg-primary text-black font-bold py-2 px-4 rounded-md text-sm hover:bg-primary/80 transition-colors" type="submit">
+                                Submit
+                            </button>
+</form>
+</div>
+</div>
+</div>
+<div class="mt-12 border-t border-primary/30 pt-8 text-center text-white/50 text-xs">
+<p>© 2025 OKaMi. All rights reserved by Vignesh Biji. Please drink responsibly. | <a class="hover:text-primary" href="privacy.html">Privacy Policy</a></p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
